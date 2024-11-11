@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Default height for small devices */
+#intro-example {
+  height: 400px;
+}
+
+/* Height for devices larger than 992px */
+@media (min-width: 992px) {
+  #intro-example {
+    height: 600px;
+  }
+}
+
+.top-bar {
+  background: linear-gradient(90deg, #c0ee33 0%, #7adf57 44.5%, #36d179 100%);
+  height: 64px;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Top bar style */
+.top-bar {
+    background: linear-gradient(90deg, #c0ee33 0%, #7adf57 44.5%, #36d179 100%);
+    height: 64px;
+    opacity: 1; /* Set opacity to 1 instead of 0 to make it visible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .top-bar p {
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.13px;
+    text-align: left;
+    color: white; /* Added text color */
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  
+  /* Navigation bar */
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 52px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  
+  /* Glass effect for the navbar */
+  .glass-effect {
+    background: radial-gradient(
+      73.33% 273.86% at 26.67% 119.66%,
+      rgba(255, 255, 255, 0.28) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(42px);
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 82px;
+    position: absolute; /* Initially absolute for scrolling */
+    top: 64px; /* Position below the top bar */
+    z-index: 1000;
+  }
+  
+  /* Logo styling */
+  .glass-effect img.logo {
+    width: 208.73px;
+    height: 40.73px;
+  }
+  
+  /* Sticky effect for the navbar when scroll reaches top bar's bottom */
+  .glass-effect.sticky {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+
+.background-container {
+  width: 100%; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent overflow */
+  position: relative;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.text-overlay {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset to center */
+  color: white; /* Text color for readability */
+  text-align: center; /* Center text content */
+  z-index: 2; /* Places the text above the image */
+  padding: 20px;
+  max-width: 100%; /* Optional: restrict width for smaller screens */
+  width: 100%;
+}
+
+.text-overlay h1 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 110px;
+  font-weight: 700;
+}
+
+.text-overlay p {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 40px;
+  text-align: center;
+  width: auto; /* Let the width adjust */
+  max-width: 920px; /* Restrict width for better readability */
+  margin: 0 auto; /* Center the block element */
+}
+
+.other-content {
+  background: rgba(0, 12, 39, 1);
+  height: 100vh;
+}
+
+.center-container {
+  position: absolute;
+  width: 1015px;
+  height: 184px;
+  top: 670px;
+  left: 213px;
+  border-radius: 37px;
+  border: 3px;
+  opacity: 0px;
+  background: radial-gradient(
+      97.57% 210.75% at 0.9% 2.98%,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border: 3px solid;
+  border-image-source: radial-gradient(
+        97.57% 210.75% at 0.9% 2.98%,
+        rgba(14, 13, 13, 0) 0%,
+        #0e0d0d 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(
+        97.09% 224.61% at 1.38% 96.94%,
+        rgba(14, 13, 13, 0) 0%,
+        #0e0d0d 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(
+      114.55deg,
+      rgba(255, 255, 255, 0.9) 2.13%,
+      rgba(255, 255, 255, 0) 98.14%
+    );
+  backdrop-filter: blur(42px);
+  z-index: 99;
+  padding: 35px 91px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textual-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.textual-content span {
+  font-family: Fjalla One;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 87.98px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(181, 242, 49, 1);
+}
+
+.textual-content p {
+  font-family: Fjalla One;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.14px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.line-btw {
+  width: 2px; /* Set to a thin width for a vertical line */
+  height: 109px; /* Height for the line */
+  border: none; /* Remove default border */
+  background: linear-gradient(
+    90deg,
+    #554f50 1.04%,
+    #7b9144 15.42%,
+    #b5f231 25.5%,
+    #ffffff 46%,
+    #b5f231 65.18%,
+    #719541 84.86%,
+    #303a50 98.86%
+  );
+  opacity: 1; /* Ensure full visibility */
+}
